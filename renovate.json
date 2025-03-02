@@ -14,13 +14,12 @@
   ],
   "customManagers": [
     {
-      "customType": "jsonata",
-      "fileFormat": "yaml",
+      "customType": "regex",
       "fileMatch": [
         "values.yaml$"
       ],
       "matchStrings": [
-        "[ { \"depName\": image.name, \"currentValue\": image.tag, \"currentDigest\": image.digest } ]"
+        "  name: (?<depName>\\S+)\n  tag: (?<currentValue>\\S+)\n  digest: (?<currentDigest>\\S+)\n"
       ],
       "datasourceTemplate": "docker"
     }
