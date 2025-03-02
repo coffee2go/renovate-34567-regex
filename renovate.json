@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchPackageNames": [
+        "nginx"
+      ],
+      "versioning": "docker",
+      "enabled": true
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "jsonata",
+      "fileFormat": "yaml",
+      "fileMatch": [
+        "values.yaml$"
+      ],
+      "matchStrings": [
+        "[ { \"depName\": image.name, \"currentValue\": image.tag, \"currentDigest\": image.digest } ]"
+      ],
+      "datasourceTemplate": "docker"
+    }
+  ]
+}

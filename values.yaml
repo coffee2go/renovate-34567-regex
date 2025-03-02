@@ -1,0 +1,4 @@
+image:
+  name: nginx
+  tag: 1.26.3
+  digest: sha256:73d149c5b564e7a243060ae939b7c789f083ca8d9131e16f90246e596948d858
